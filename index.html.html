@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atividade Avaliativa 5</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    color: #333;
+  }
+  h2.titulo-exercicio {
+    text-align: center;
+    padding: 30px 20px 10px;
+    font-size: 26px;
+    color: #222;
+  }
+
+  /* ===================== EXERCÍCIO 01 ===================== */
+  .ex1-fundo {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 45px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, #4f9a92 0%, #2c3a54 100%);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+  .ex1-caixa {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+  .ex1-caixa p {
+    color: #c0392b;
+    font-size: 14px;
+    line-height: 1.65;
+    text-align: justify;
+    margin: 0 0 16px;
+  }
+  .ex1-caixa p:last-child { margin-bottom: 0; }
+
+  /* ===================== EXERCÍCIO 02 ===================== */
+  .ex2-moldura {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  .ex2-fundo {
+    position: relative;
+    height: 420px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    gap: 16px;
+    padding: 22px;
+  }
+  .ex2-ceu {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(to bottom, #62bde3 0%, #bfe4f5 55%, #eef7e9 82%, #eef7e9 100%);
+  }
+  .ex2-nuvem {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: .88;
+  }
+  .ex2-campo {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 27%;
+    background: linear-gradient(to bottom, #7bb44b 0%, #4f8c34 100%);
+  }
+  .ex2-tronco {
+    position: absolute; bottom: 19%; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 65px; background: #5b3a21; border-radius: 2px;
+  }
+  .ex2-copa {
+    position: absolute; bottom: 36%; left: 50%; transform: translateX(-50%);
+    width: 105px; height: 95px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #67ab46, #2f6a24 75%);
+    box-shadow: -38px 18px 0 -10px #3f7d2c, 38px 14px 0 -16px #3f7d2c;
+  }
+  .ex2-caixa {
+    position: relative; z-index: 2;
+    flex: 1 1 0;
+    align-self: flex-start;
+    min-height: 205px;
+    background: rgba(255,255,255,0.42);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 3px;
+    padding: 16px 18px;
+  }
+  .ex2-caixa p {
+    color: #7a1d3a;
+    font-size: 11.5px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 0 12px;
+  }
+  .ex2-caixa p:last-child { margin-bottom: 0; }
+
+  /* ===================== EXERCÍCIO 03 ===================== */
+  .ex3-fundo {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto 60px;
+    padding: 22px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #5f86e6 0%, #10163a 100%);
+    box-shadow: 8px 8px 18px rgba(0,0,0,0.35);
+  }
+  .ex3-caixa {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 22px 26px;
+    box-shadow: inset 0 0 14px rgba(0,0,0,0.12), 0 6px 14px rgba(0,0,0,0.3);
+  }
+  .ex3-caixa h1 {
+    color: #1a2a55;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 0 0 15px;
+  }
+  .ex3-caixa p {
+    color: #c0392b;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 0 15px;
+  }
+  .ex3-caixa p:last-child { margin-bottom: 0; }
+
+  /* ===================== EXERCÍCIO 04 ===================== */
+  .ex4-fundo {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  }
+  .ex4-backdrop {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background:
+      radial-gradient(circle at 16% 20%, rgba(255,175,95,0.30), transparent 42%),
+      radial-gradient(circle at 88% 85%, rgba(100,150,255,0.14), transparent 45%),
+      linear-gradient(140deg, #1c1c1c 0%, #050505 100%);
+  }
+  .ex4-retrato-wrap {
+    position: absolute; left: 30px; top: 26px; width: 150px;
+  }
+  .ex4-retrato-wrap h1 {
+    color: #fff;
+    font-size: 23px;
+    margin: 0 0 12px;
+  }
+  .ex4-retrato-wrap svg {
+    width: 100%; height: auto; border-radius: 6px; display: block;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+  }
+  .ex4-scroll {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    overflow-y: auto;
+    padding: 26px 28px 26px 200px;
+  }
+  .ex4-scroll p {
+    color: #ececec;
+    font-size: 13px;
+    line-height: 1.75;
+    text-align: justify;
+    margin: 0 0 14px;
+  }
+
+  /* ===================== EXERCÍCIO 05 ===================== */
+  .ex5-wrap {
+    width: min(88%, 560px);
+    margin: 0 auto 18px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #bcbcbc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+  }
+  .ex5-banner {
+    position: relative;
+    height: 236px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .ex5-banner svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 145px;
+    display: block;
+  }
+  .ex5-banner-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 103px;
+    right: 26px;
+    bottom: 0;
+    left: 26px;
+    padding: 24px 13px 12px;
+    background: #fff;
+  }
+  .ex5-banner-overlay h1 {
+    color: #f4a20a;
+    font-size: 22px;
+    margin: 0 0 8px;
+  }
+  .ex5-banner-overlay p {
+    color: #4a4a4a;
+    font-size: 8px;
+    line-height: 1.35;
+    text-align: justify;
+    margin: 0;
+  }
+  .ex5-banner-overlay::after {
+    content: "MARVEL COMICS GROUP";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px 8px 2px;
+    border: 2px solid #f4d522;
+    background: #2b8bc6;
+    color: #f4d522;
+    font: bold 7px/1 Arial, sans-serif;
+    letter-spacing: .25px;
+    white-space: nowrap;
+  }
+
+  .ex5-wrap2 {
+    position: relative;
+    width: min(72%, 445px);
+    height: 205px;
+    margin: 0 auto 60px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+  }
+  .ex5-wrap2::before,
+  .ex5-wrap2::after {
+    position: absolute;
+    top: 17px;
+    bottom: 17px;
+    width: 41px;
+    content: "";
+    background-color: #0d0d0d;
+    background-image:
+      linear-gradient(45deg, rgba(255,255,255,.08) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.08) 75%),
+      linear-gradient(45deg, rgba(255,255,255,.08) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.08) 75%);
+    background-position: 0 0, 7px 7px;
+    background-size: 14px 14px;
+  }
+  .ex5-wrap2::before { left: 17px; }
+  .ex5-wrap2::after { right: 17px; }
+  .ex5-miolo {
+    position: relative;
+    z-index: 1;
+    margin: 0 67px;
+    padding: 17px 0 0;
+    background: transparent;
+  }
+  .ex5-imagem2 {
+    width: 116px;
+    height: 62px;
+    border-radius: 0;
+    margin: 0 auto 8px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .ex5-imagem2 svg { height: 62px !important; }
+  .ex5-miolo h2 { color: #f4a20a; font-size: 10px; margin: 6px 0 3px; }
+  .ex5-miolo h2:first-of-type { margin-top: 0; }
+  .ex5-miolo p { font-size: 6.4px; line-height: 1.32; text-align: justify; color: #333; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ===================== EXERCÍCIO 01 ===================== -->
+<h2 class="titulo-exercicio">Exercício 01 — Gradiente + bordas arredondadas</h2>
+<div class="ex1-fundo">
+  <div class="ex1-caixa">
+    <p>Musso muito caclids, vi o litro ABERTO. Pesquisa de graduação da
+    Consett. Pra lá, depósitos divoltis alhos franceses, desfile. Pais
+    Filho, no Espírito Santo. Mé faz elemento do girazis, se a economia
+    levar Vermeire, que é um leão nos elementos amistosas mé é pra
+    quem. Diâmetro da conferência Manduma pindureta nois paga. Dicas
+    para remover o palaver, quero dizer, a aplicação nadis pareci.
+    Interessantiss quissi fazendo assim ce receita fora das armadilhas,
+    armadilhas, mais seja futebol GOST.</p>
+    <p>Com o suco do cevadiss, é um leite diviners, que tem lupuliz, o
+    altar do incenso, Águis sai dos fermentos. Interagi no me, o curso
+    de um homem, e ele parou veículos. Jasmine ou dui vale a pena. Não
+    havia leão, bananas de qualquer época, para dar à luz um filho.
+    Para chocolate ou feio e colocar almofada de nutrição adipiscing
+    elit. Navegação na televisão imobiliária, apenas o elemento final
+    de semana. Enéias e o feio. Pellentesque me e às vezes executando
+    autor graduado térmica ao ar livre. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Até mesmo o ac mauris de cama, não a
+    fuga de chocolate. Jasmine apenas massa.</p>
+  </div>
+</div>
+
+<!-- ===================== EXERCÍCIO 02 ===================== -->
+<h2 class="titulo-exercicio">Exercício 02 — Background, caixas e transparência</h2>
+<div class="ex2-moldura">
+<div class="ex2-fundo">
+  <div class="ex2-ceu"></div>
+  <div class="ex2-nuvem" style="top:8%;left:8%;width:90px;height:32px;"></div>
+  <div class="ex2-nuvem" style="top:15%;left:13%;width:55px;height:24px;"></div>
+  <div class="ex2-nuvem" style="top:6%;left:76%;width:95px;height:34px;"></div>
+  <div class="ex2-nuvem" style="top:14%;left:82%;width:50px;height:22px;"></div>
+  <div class="ex2-campo"></div>
+  <div class="ex2-tronco"></div>
+  <div class="ex2-copa"></div>
+  <div class="ex2-caixa">
+    <p>Musso muito caclids, vi o litro ABERTO. Pesquisa de graduação da
+    Consett. Pra lá, depósitos divoltis alhos franceses, desfile. Pais
+    Filho, no Espírito Santo. Mé faz elemento do girazis, se a economia
+    levar Vermeire, que é um leão nos elementos amistosas mé é pra
+    quem. Diâmetro da conferência Manduma pindureta nois paga.</p>
+    <p>Com o suco do cevadiss, é um leite diviners, que tem lupuliz, o
+    altar do incenso, Águis sai dos fermentos. Interagi no me, o curso
+    de um homem, e ele parou veículos. Jasmine ou dui vale a pena. Não
+    havia leão, bananas de qualquer época, para dar à luz um filho.</p>
+  </div>
+  <div class="ex2-caixa">
+    <p>Musso muito caclids, vi o litro ABERTO. Pesquisa de graduação da
+    Consett. Pra lá, depósitos divoltis alhos franceses, desfile. Pais
+    Filho, no Espírito Santo. Mé faz elemento do girazis, se a economia
+    levar Vermeire, que é um leão nos elementos amistosas mé é pra
+    quem. Diâmetro da conferência Manduma pindureta nois paga.</p>
+    <p>Com o suco do cevadiss, é um leite diviners, que tem lupuliz, o
+    altar do incenso, Águis sai dos fermentos. Interagi no me, o curso
+    de um homem, e ele parou veículos. Jasmine ou dui vale a pena. Não
+    havia leão, bananas de qualquer época, para dar à luz um filho.</p>
+  </div>
+</div>
+</div>
+
+<!-- ===================== EXERCÍCIO 03 ===================== -->
+<h2 class="titulo-exercicio">Exercício 03 — Gradiente, caixas e sombras</h2>
+<div class="ex3-fundo">
+  <div class="ex3-caixa">
+    <h1>LOREM IPSUM</h1>
+    <p>Musso muito caclids, vi o litro ABERTO. Pesquisa de graduação da
+    Consett. Pra lá, depósitos divoltis alhos franceses, desfile. Pais
+    Filho, no Espírito Santo. Mé faz elemento do girazis, se a economia
+    levar Vermeire, que é um leão nos elementos amistosas mé é pra
+    quem. Diâmetro da conferência Manduma pindureta nois paga. Dicas
+    para remover o palaver, quero dizer, a aplicação nadis pareci.
+    Interessantiss quissi fazendo assim ce receita fora das armadilhas,
+    armadilhas, mais seja futebol GOST.</p>
+    <p>Com o suco do cevadiss, é um leite diviners, que tem lupuliz, o
+    altar do incenso, Águis sai dos fermentos. Interagi no me, o curso
+    de um homem, e ele parou veículos. Jasmine ou dui vale a pena. Não
+    havia leão, bananas de qualquer época, para dar à luz um filho.
+    Para chocolate ou feio e colocar almofada de nutrição adipiscing
+    elit. Navegação na televisão imobiliária, apenas o elemento final
+    de semana. Até mesmo o ac mauris de cama, não a fuga de chocolate.
+    Jasmine apenas massa.</p>
+  </div>
+</div>
+
+<!-- ===================== EXERCÍCIO 04 ===================== -->
+<h2 class="titulo-exercicio">Exercício 04 — Imagem fixa (parallax simples)</h2>
+<div class="ex4-fundo">
+  <div class="ex4-backdrop"></div>
+  <div class="ex4-retrato-wrap">
+    <h1>Marcus Kaelin</h1>
+    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="duotone" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#d8ac6f"/>
+          <stop offset="100%" stop-color="#241608"/>
+        </linearGradient>
+      </defs>
+      <rect width="150" height="150" fill="url(#duotone)"/>
+      <circle cx="75" cy="58" r="30" fill="#140d06" opacity="0.88"/>
+      <path d="M32 150 C32 100 118 100 118 150 Z" fill="#140d06" opacity="0.88"/>
+      <rect x="6" y="118" width="95" height="9" rx="4" fill="#3a2a17" transform="rotate(-22 53 122)"/>
+    </svg>
+  </div>
+  <div class="ex4-scroll">
+    <p>Marcus Kaelin é um cantor e compositor fictício criado para este
+    exercício, conhecido por sua contribuição marcante à música
+    independente e à cultura de sua geração. Ao longo de sua
+    trajetória, construiu uma carreira sólida, sempre reinventando
+    sua sonoridade e explorando novas formas de expressão artística.</p>
+    <p>Suas composições costumam abordar temas sociais, políticos e
+    pessoais, refletindo os movimentos culturais de sua época. Vários
+    de seus álbuns são considerados marcos em sua carreira, e sua
+    influência pode ser percebida em diversos artistas que vieram
+    depois dele.</p>
+    <p>Ao longo dos anos, recebeu diversos prêmios e reconhecimentos por
+    seu trabalho, consolidando-se como uma das vozes mais respeitadas de
+    seu cenário musical. Sua obra continua sendo apreciada por fãs ao
+    redor do mundo, mantendo viva sua relevância artística.</p>
+    <p>Role o texto para ver o efeito: a imagem de fundo permanece fixa
+    no lugar enquanto apenas o conteúdo de texto se desloca por cima
+    dela, criando uma sensação de profundidade entre o texto e a
+    imagem.</p>
+    <p>Continue rolando para perceber que o retrato e o título não
+    acompanham a rolagem da página, permanecendo sempre visíveis
+    enquanto o texto passa por baixo.</p>
+  </div>
+</div>
+
+<!-- ===================== EXERCÍCIO 05 ===================== -->
+<h2 class="titulo-exercicio">Exercício 05 — Página de personagem</h2>
+
+<div class="ex5-wrap">
+  <div class="ex5-banner">
+    <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2e2e2e"/>
+          <stop offset="60%" stop-color="#141414"/>
+          <stop offset="100%" stop-color="#050505"/>
+        </linearGradient>
+        <linearGradient id="faceGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#ffd34f"/>
+          <stop offset="55%" stop-color="#f2a51c"/>
+          <stop offset="100%" stop-color="#a65a0a"/>
+        </linearGradient>
+        <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffe6a8"/>
+          <stop offset="100%" stop-color="#f7931e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <rect width="600" height="260" fill="url(#bg5)"/>
+
+      <g stroke="#f7931e" stroke-width="1.3" opacity="0.28" fill="none">
+        <path d="M90,30 L20,-10"/>
+        <path d="M90,30 L170,5"/>
+        <path d="M90,30 L55,130"/>
+        <path d="M90,30 L150,95"/>
+        <path d="M90,30 L60,60"/>
+        <path d="M520,215 L600,255"/>
+        <path d="M520,215 L440,175"/>
+        <path d="M520,215 L555,95"/>
+        <path d="M520,215 L470,255"/>
+        <path d="M520,215 L490,150"/>
+      </g>
+      <g stroke="#ffffff" stroke-width="0.8" opacity="0.12" fill="none">
+        <path d="M90,30 L110,90"/>
+        <path d="M520,215 L560,180"/>
+      </g>
+
+      <path d="M120,230 C170,205 250,224 300,224 C350,224 430,205 480,230 L480,260 L120,260 Z" fill="#154e92"/>
+      <path d="M120,230 C170,205 250,224 300,224 C350,224 430,205 480,230" fill="none" stroke="#2f78bd" stroke-width="3" opacity="0.8"/>
+
+      <path d="M270,205 L270,230 L330,230 L330,205 Z" fill="#2a2a2a"/>
+
+      <path d="M258,82 C228,94 218,135 224,172 C229,202 248,222 270,229 L330,229 C352,222 371,202 376,172 C382,135 372,94 342,82 C326,72 274,72 258,82 Z" fill="url(#faceGrad)"/>
+
+      <path d="M345,88 C367,102 376,140 367,182 C363,198 353,212 340,222" fill="none" stroke="#f7931e" stroke-width="3" opacity="0.55" stroke-linecap="round"/>
+
+      <polygon points="222,92 236,32 250,86 263,20 280,84 300,14 320,84 337,20 350,86 364,32 378,92" fill="#ffd34f"/>
+      <polygon points="222,92 236,42 250,86 263,30 280,84 300,26 320,84 337,30 350,86 364,42 378,92" fill="#ef9e14" opacity="0.7"/>
+
+      <path d="M240,140 L286,148 L283,155 L238,148 Z" fill="#0d0d0d"/>
+      <path d="M360,140 L314,148 L317,155 L362,148 Z" fill="#0d0d0d"/>
+
+      <path d="M246,158 L288,153 L286,166 L248,168 Z" fill="url(#eyeGlow2)"/>
+      <path d="M354,158 L312,153 L314,166 L352,168 Z" fill="url(#eyeGlow2)"/>
+      <ellipse cx="266" cy="161" rx="4" ry="5" fill="#fff8e8"/>
+      <ellipse cx="334" cy="161" rx="4" ry="5" fill="#fff8e8"/>
+
+      <path d="M300,168 L291,196 L309,196 Z" fill="#101010" opacity="0.55"/>
+
+      <path d="M267,204 C282,220 318,220 333,204 C323,214 277,214 267,204 Z" fill="#0a0a0a"/>
+      <polygon points="280,205 285,198 290,205" fill="#f2f2f2"/>
+      <polygon points="293,208 298,200 303,208" fill="#f2f2f2"/>
+      <polygon points="306,208 311,200 316,208" fill="#f2f2f2"/>
+      <polygon points="318,205 323,198 328,205" fill="#f2f2f2"/>
+    </svg>
+    <div class="ex5-banner-overlay">
+      <h1>Wolverine</h1>
+      <p>Wolverine, também conhecido como Logan, é um dos mais famosos
+      personagens dos quadrinhos. Integrante dos X-Men, ele é conhecido
+      pelo fator de cura, pelas garras de adamantium e pelo temperamento
+      indomável. Sua trajetória reúne conflitos, coragem e a busca por
+      respostas sobre o próprio passado.</p>
+    </div>
+  </div>
+</div>
+
+<div class="ex5-wrap2">
+  <div class="ex5-miolo">
+    <div class="ex5-imagem2">
+      <svg viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100px;display:block;">
+        <rect width="600" height="100" fill="#141414"/>
+        <line x1="230" y1="10" x2="370" y2="90" stroke="#f7931e" stroke-width="2" opacity="0.35"/>
+        <line x1="250" y1="8" x2="390" y2="88" stroke="#f7931e" stroke-width="1.5" opacity="0.25"/>
+        <circle cx="300" cy="50" r="36" fill="#2b2b2b" stroke="#f7931e" stroke-width="3"/>
+        <text x="300" y="62" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#f7931e" text-anchor="middle">T</text>
+      </svg>
+    </div>
+
+    <h2>Publicação</h2>
+    <p>A primeira aparição de Wolverine ocorreu em uma revista da Marvel
+    Comics. Pouco depois, ele passou a integrar os X-Men e conquistou
+    espaço em histórias próprias, tornando-se uma presença marcante no
+    universo dos quadrinhos.</p>
+
+    <h2>História</h2>
+    <p>Ao longo de sua história, Wolverine enfrentou grandes desafios e
+    passou por muitas transformações. Seu passado misterioso, a relação
+    com os X-Men e seu espírito de sobrevivência mantêm o personagem
+    entre os mais populares da Marvel.</p>
+  </div>
+</div>
+
+</body>
+</html>
